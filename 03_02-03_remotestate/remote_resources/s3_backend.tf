@@ -6,7 +6,7 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "bucket_name" {
-  default = "red30-tfstate"
+  default = "red30-tfstate-309135946640"
 }
 
 # //////////////////////////////
@@ -70,8 +70,8 @@ resource "aws_s3_bucket_public_access_block" "red30-tfremotestate" {
 # //////////////////////////////
 resource "aws_dynamodb_table" "tf_db_statelock" {
   name           = "red30-tfstatelock"
-  read_capacity  = 20
-  write_capacity = 20
+  read_capacity  = 1
+  write_capacity = 1
   hash_key       = "LockID"
 
   attribute {
